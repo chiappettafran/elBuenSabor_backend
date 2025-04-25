@@ -4,12 +4,14 @@ import org.internalPointerVariable.elbuensabor_backend.controllers.base.BaseCont
 import org.internalPointerVariable.elbuensabor_backend.dtos.InstrumentoDtos;
 import org.internalPointerVariable.elbuensabor_backend.entities.Instrumento;
 import org.internalPointerVariable.elbuensabor_backend.services.InstrumentoService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/instrumento")
-public class InstrumentoController extends BaseController<Instrumento, InstrumentoDtos.responseDTO, InstrumentoDtos.requestDTO> {
+public class InstrumentoController extends BaseController<Instrumento, InstrumentoDtos.ResponseDTO, InstrumentoDtos.RequestDTO> {
 
     private final InstrumentoService instrumentoService;
     public InstrumentoController(InstrumentoService instrumentoService) {
@@ -23,7 +25,7 @@ public class InstrumentoController extends BaseController<Instrumento, Instrumen
     }
 
     @Override
-    protected Class<InstrumentoDtos.responseDTO> getDTOClass() {
-        return InstrumentoDtos.responseDTO.class;
+    protected Class<InstrumentoDtos.ResponseDTO> getDTOClass() {
+        return InstrumentoDtos.ResponseDTO.class;
     }
 }

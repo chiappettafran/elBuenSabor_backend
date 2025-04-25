@@ -1,7 +1,8 @@
 package org.internalPointerVariable.elbuensabor_backend.controllers.base;
 
-import org.internalPointerVariable.elbuensabor_backend.services.BaseService;
+import org.internalPointerVariable.elbuensabor_backend.services.base.BaseService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,22 +27,33 @@ public abstract class BaseController<ENTITY, RESPONSE_DTO, REQUEST_DTO> {
         return ResponseEntity.ok(dto);
     }
 
-    @PostMapping("")
-    public ResponseEntity<ENTITY> create(@RequestBody REQUEST_DTO dto) {
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<ENTITY> createJson(@RequestBody REQUEST_DTO dto) {
         ENTITY created = baseService.save(dto, getEntityClass());
         return  ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<ENTITY> update(@PathVariable Long id, @RequestBody REQUEST_DTO dto) {
+    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<ENTITY> updateJson(@PathVariable Long id, @RequestBody REQUEST_DTO dto) {
+        ENTITY updated = baseService.update(id, dto, getEntityClass());
+        return ResponseEntity.ok(updated);
+    }
+
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<ENTITY> createWithImage(@ModelAttribute REQUEST_DTO dto) {
+        ENTITY created = baseService.save(dto, getEntityClass());
+        return  ResponseEntity.status(HttpStatus.CREATED).body(created);
+    }
+
+    @PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<ENTITY> update(@PathVariable Long id, @ModelAttribute REQUEST_DTO dto) {
         ENTITY updated = baseService.update(id, dto, getEntityClass());
         return ResponseEntity.ok(updated);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
-        baseService.delete(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(baseService.delete(id));
     }
 
     protected abstract Class<ENTITY> getEntityClass();
