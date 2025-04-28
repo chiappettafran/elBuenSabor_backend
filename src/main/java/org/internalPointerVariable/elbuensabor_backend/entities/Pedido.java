@@ -12,6 +12,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.Tipo
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 @Table(name = "pedido")
@@ -42,4 +43,15 @@ public class Pedido extends BaseEntity {
 
     @Column(name = "fecha_pedido", length = 256)
     private LocalDate fechaPedido; //Este aparece en el uml pero creo que se puede exceptuar ya que esta en en BaseEntity
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente clienteFK;
+
+    @ManyToOne
+    @JoinColumn(name = "domicilio_id")
+    private Domicilio domicilioFK;
+
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DetallePedido> detallesFK;
 }
