@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.RolEnum;
 
 @Entity
 @Table(name = "usuario")
@@ -12,19 +13,19 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Usuario extends Persona{
 
-    @Column(name = "usuario", length = 50)
+    @Column(name = "auth0_id", length = 50)
+    private String auth0Id;
+
+    @Column(name = "username", length = 50)
     private String usuario;
 
-    @Column(name = "clave", length = 50)
-    private String clave;
+    @Column(name = "foto_perfil", length = 50)
+    private String fotoPerfil;
 
     @Column(name = "rol", length = 50)
-    private String rol;
+    private RolEnum rol;
 
     @OneToOne
     @JoinColumn (name = "cliente_fk")

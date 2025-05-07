@@ -21,17 +21,10 @@ public class Factura extends BaseEntity {
     @Column(name = "fecha_facturacion", length = 256, nullable = false)
     private LocalDate fechaFacturacion; //Este atributo tambien se puede obviar
 
-    @Column(name = "mp_payment_id", length = 256, nullable = false)
-    private Integer mpPaymentId;
 
-    @Column(name = "mp_merchant_order_id", length = 256, nullable = false)
-    private Integer mpMerchantOrderId;
+    @Column(name = "porcentaje_descuento", length = 256, nullable = false)
+    private Integer porcentajeDescuento;
 
-    @Column(name = "mp_preference_id", length = 256, nullable = false)
-    private String mpPreferenceId;
-
-    @Column(name = "mp_payment_type", length = 256, nullable = false)
-    private String mpPaymentType;
 
     @Column(name = "forma_pago", length = 256, nullable = false)
     private FormaPagoEnum formaPago;
@@ -42,4 +35,8 @@ public class Factura extends BaseEntity {
     @OneToOne
     @JoinColumn(name = "pedido_fk")
     private Pedido pedido;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "datos_mercado_pago_fk")
+    private DatosMercadoPago datosMercadoPago;
 }
