@@ -23,7 +23,4 @@ public class Localidad extends BaseEntity {
     @OneToMany(mappedBy = "localidad",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Domicilio> domiciliosFK;
 
-    @ManyToOne
-    @JoinColumn(name = "provincia_id")
-    private Provincia provincia;
 }
