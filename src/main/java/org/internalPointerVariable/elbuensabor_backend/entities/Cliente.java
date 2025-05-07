@@ -16,19 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Cliente extends BaseEntity {
-
-    @Column(name = "nombre", length = 256)
-    private String nombre;
-
-    @Column(name = "apellido", length = 256)
-    private String apellido;
-
-    @Column(name = "telefono", length = 256)
-    private Long telefono;
-
-    @Column(name = "email", length = 256)
-    private String email;
+public class Cliente extends Persona {
 
     @Column(name = "fecha_nacimiento", length = 256)
     private LocalDate fechaNacimiento;
@@ -47,5 +35,9 @@ public class Cliente extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "domicilio_id")
     )
     private List<Domicilio> domicilioFK;
+
+    @OneToOne
+    @JoinColumn (name = "usuario_fk")
+    private Usuario usuarioFK;
 
 }

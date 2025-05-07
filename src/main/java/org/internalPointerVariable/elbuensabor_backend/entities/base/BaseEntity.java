@@ -19,11 +19,13 @@ public class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "fecha_creacion", length = 256)
-    private LocalDate fechaCreacion;
+    @Column(name = "created_at", length = 256)
+    private LocalDate createdAt;
 
-    @Column(name = "esta_eliminado", length = 256)
-    private boolean estaEliminado;
+    @Column(name = "is_deleted", length = 256)
+    private boolean isDeleted;
 
+    @Column(name = "deleted_at", length = 256)
+    private LocalDate deletedAt;
 
 }

@@ -8,22 +8,15 @@ import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 
 @Entity
-@Table(name = "detalle_pedido")
+@Table(name = "detalle_promocion")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class DetallePedido extends BaseEntity {
+public class DetallePromocion extends BaseEntity {
 
     @Column(name = "cantidad", length = 256)
     private Integer cantidad;
-
-    @Column(name = "subtotal", length = 256)
-    private Double subtotal;
-
-    @ManyToOne
-    @JoinColumn(name = "pedido_fk")
-    private Pedido pedido;
 
     @ManyToOne
     @JoinColumn(name = "articulo_insumo_fk")
@@ -35,5 +28,5 @@ public class DetallePedido extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "promocion_fk")
-    private Promocion promocion;
+    private Promocion promocionFK;
 }

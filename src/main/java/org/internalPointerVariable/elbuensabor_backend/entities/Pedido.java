@@ -22,9 +22,11 @@ import java.util.List;
 @Setter
 public class Pedido extends BaseEntity {
 
+    @Column(name = "hora_inicio_preparacion", length = 256)
+    private LocalTime horaInicioPreparacion;
 
-    @Column(name = "hora_estimada_finalizacion", length = 256)
-    private LocalTime horaEstamadaFinalizacion;
+    @Column(name = "hora_fin_preparacion", length = 256)
+    private LocalTime horaFinPreparacion;
 
     @Column(name = "total", length = 256)
     private Double total;
@@ -45,13 +47,27 @@ public class Pedido extends BaseEntity {
     private LocalDate fechaPedido; //Este aparece en el uml pero creo que se puede exceptuar ya que esta en en BaseEntity
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "cliente_fk")
     private Cliente clienteFK;
 
     @ManyToOne
-    @JoinColumn(name = "domicilio_id")
+    @JoinColumn(name = "domicilio_fk")
     private Domicilio domicilioFK;
+
+    @ManyToOne
+    @JoinColumn(name = "cajero_fk")
+    private Empleado cajeroFK;
+
+    @ManyToOne
+    @JoinColumn(name = "cocinero_fk")
+    private Empleado cocineroFK;
+
+    @ManyToOne
+    @JoinColumn(name = "delivery_FK")
+    private Empleado deliveryFK;
+
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetallePedido> detallesFK;
+
 }
