@@ -1,7 +1,9 @@
 package org.internalPointerVariable.elbuensabor_backend.repositories;
 
 import org.internalPointerVariable.elbuensabor_backend.entities.Cliente;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.internalPointerVariable.elbuensabor_backend.repositories.base.BaseRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+@Repository
+public interface ClienteRepository extends BaseRepository<Cliente> {
 }
