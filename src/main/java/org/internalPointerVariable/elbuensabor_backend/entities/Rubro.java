@@ -24,11 +24,4 @@ public class Rubro extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "rubro_padre")
     private Rubro rubroPadre;
-
-    @OneToMany(mappedBy = "rubroPadre", cascade = CascadeType.ALL)
-    private List<Rubro> subRubros = new ArrayList<>();
-
-    @OneToMany(mappedBy = "rubro", cascade = CascadeType.ALL)
-    private List<ArticuloInsumo> articuloInsumos = new ArrayList<>();
-
 }

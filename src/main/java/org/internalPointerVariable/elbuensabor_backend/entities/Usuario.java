@@ -15,19 +15,15 @@ import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.RolE
 @Setter
 public class Usuario extends Persona{
 
-    @Column(name = "auth0_id", length = 50)
-    private String auth0Id;
+    @Column(name = "auth2_id")
+    private String auth2Id;
 
-    @Column(name = "username", length = 50)
+    @Column(name = "username", length = 80)
     private String usuario;
 
-    @Column(name = "foto_perfil", length = 50)
+    @Column(name = "foto_perfil", length = 80)
     private String fotoPerfil;
 
     @Column(name = "rol", length = 50)
     private RolEnum rol;
-
-    @OneToOne
-    @JoinColumn (name = "cliente_fk")
-    private Cliente cliente;
 }

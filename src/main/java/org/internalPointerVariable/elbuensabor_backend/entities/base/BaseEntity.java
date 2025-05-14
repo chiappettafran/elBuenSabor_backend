@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,13 +20,13 @@ public class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "created_at", length = 256)
-    private LocalDate createdAt;
+    @Column(name = "created_at")
+    private OffsetDateTime createdAt;
 
-    @Column(name = "is_deleted", length = 256)
+    @Column(name = "is_deleted")
     private boolean isDeleted;
 
-    @Column(name = "deleted_at", length = 256)
-    private LocalDate deletedAt;
+    @Column(name = "deleted_at")
+    private OffsetDateTime deletedAt;
 
 }

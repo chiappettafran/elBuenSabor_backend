@@ -18,31 +18,27 @@ import java.time.LocalDate;
 @Setter
 public class DatosMercadoPago extends BaseEntity {
 
-    @Column(name = "date_approved", length = 256, nullable = false)
+    @Column(name = "date_approved", length = 256, nullable = true)
     private LocalDate dateApproved;
 
-    @Column(name = "date_last_updated", length = 256, nullable = false)
+    @Column(name = "date_last_updated", length = 256, nullable = true)
     private LocalDate dateLastUpdated;
 
-    @Column(name = "mp_merchant_order_id", length = 256, nullable = false)
+    @Column(name = "mp_merchant_order_id", length = 256, nullable = true)
     private Integer mpMerchantOrderId;
 
-    @Column(name = "mp_preference_id", length = 256, nullable = false)
+    @Column(name = "mp_preference_id", length = 256, nullable = true)
     private String mpPreferenceId;
 
-    @Column(name = "mp_payment_type", length = 256, nullable = false)
+    @Column(name = "mp_payment_type", length = 256, nullable = true)
     private String mpPaymentType;
 
-    @Column(name = "mp_payment_id", length = 256, nullable = false)
+    @Column(name = "mp_payment_id", length = 256, nullable = true)
     private Integer mpPaymentId;
 
-    @Column(name = "status", length = 256, nullable = false)
+    @Column(name = "status", length = 256, nullable = true)
     private StatusMPEnum status;
 
-    @Column(name = "status_detail", length = 256, nullable = false)
+    @Column(name = "status_detail", length = 256, nullable = true)
     private String statusDetail;
-
-//    @OneToOne
-//    @JoinColumn(name = "factura_fk")
-//    private Factura facturaFK;
 }

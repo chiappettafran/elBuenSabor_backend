@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @Entity
@@ -21,13 +22,13 @@ public class Promocion extends BaseEntity {
     @Column(name = "denominacion", length = 256)
     private String denominacion;
 
-    @Column(name = "fecha_desde", length = 256)
-    private LocalDate fechaDesde;
+    @Column(name = "fecha_desde")
+    private OffsetDateTime fechaDesde;
 
-    @Column(name = "fecha_hasta", length = 256)
-    private LocalDate fechaHasta;
+    @Column(name = "fecha_hasta")
+    private OffsetDateTime fechaHasta;
 
-    @Column(name = "descuento", length = 256)
+    @Column(name = "descuento")
     private Double descuento;
 
     @OneToMany(mappedBy = "promocion", cascade = CascadeType.ALL, orphanRemoval = true)

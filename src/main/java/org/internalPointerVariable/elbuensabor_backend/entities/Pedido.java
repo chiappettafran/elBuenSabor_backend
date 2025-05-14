@@ -6,12 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
-import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.EstadoEnum;
+import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.EstadoPedidoEnum;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.FormaPagoEnum;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.TipoEnvioEnum;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.OffsetTime;
 import java.util.List;
 
 @Entity
@@ -22,52 +21,45 @@ import java.util.List;
 @Setter
 public class Pedido extends BaseEntity {
 
-    @Column(name = "hora_inicio_preparacion", length = 256)
-    private LocalTime horaInicioPreparacion;
 
-    @Column(name = "hora_fin_preparacion", length = 256)
-    private LocalTime horaFinPreparacion;
+    @Column(name = "hora_inicio_preparacion")
+    private OffsetTime horaInicioPreparacion;
 
-    @Column(name = "total", length = 256)
+    @Column(name = "hora_fin_preparacion")
+    private OffsetTime horaFinPreparacion;
+
+    @Column(name = "total")
     private Double total;
 
-    @Column(name = "total_costo", length = 256)
+    @Column(name = "total_costo")
     private Double totalCosto;
 
-    @Column(name = "estado", length = 256)
-    private EstadoEnum estado;
+    @Column(name = "estado")
+    private EstadoPedidoEnum estado;
 
-    @Column(name = "tipo_envio", length = 256)
+    @Column(name = "tipo_envio")
     private TipoEnvioEnum tipoEnvio;
 
-    @Column(name = "forma_pago", length = 256)
+    @Column(name = "forma_pago")
     private FormaPagoEnum formaPago;
-
-    @Column(name = "fecha_pedido", length = 256)
-    private LocalDate fechaPedido; //Este aparece en el uml pero creo que se puede exceptuar ya que esta en en BaseEntity
 
     @ManyToOne
     @JoinColumn(name = "cliente_fk")
-    private Cliente clienteFK;
-
-    @ManyToOne
-    @JoinColumn(name = "domicilio_fk")
-    private Domicilio domicilioFK;
+    private Cliente cliente;
 
     @ManyToOne
     @JoinColumn(name = "cajero_fk")
-    private Empleado cajeroFK;
+    private Empleado cajero;
 
     @ManyToOne
     @JoinColumn(name = "cocinero_fk")
-    private Empleado cocineroFK;
+    private Empleado cocinero;
 
     @ManyToOne
     @JoinColumn(name = "delivery_FK")
-    private Empleado deliveryFK;
+    private Empleado delivery;
 
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetallePedido> detallesFK;
-
 }

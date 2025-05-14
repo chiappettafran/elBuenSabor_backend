@@ -1,6 +1,6 @@
 package org.internalPointerVariable.elbuensabor_backend.entities.enumClasses;
 
-public enum EstadoEnum {
+public enum EstadoPedidoEnum {
     PREPARACION,
     PENDIENTE,
     CANCELADO,

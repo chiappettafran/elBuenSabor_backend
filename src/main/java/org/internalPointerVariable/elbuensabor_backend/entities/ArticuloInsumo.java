@@ -27,14 +27,14 @@ public class ArticuloInsumo extends BaseEntity {
     @Column(name = "precio_venta", length = 256)
     private Double precioVenta;
 
-    @Column(name = "es_para_elavorar", length = 256)
-    private Boolean esParaElavorar;
+    @Column(name = "es_para_elaborar", length = 256)
+    private Boolean esParaElaborar;
 
     @ManyToOne
     @JoinColumn(name = "rubro_fk")
-    private Rubro rubroFK;
+    private Rubro rubro;
 
     @ManyToOne
     @JoinColumn(name = "unidad_medida_fk")
-    private UnidadMedida unidadMedidaFK;
+    private UnidadMedida unidadMedida;
 }

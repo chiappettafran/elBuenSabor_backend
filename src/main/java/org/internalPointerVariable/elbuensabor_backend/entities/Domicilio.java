@@ -17,7 +17,6 @@ import java.util.List;
 @Setter
 public class Domicilio extends BaseEntity {
 
-
     @Column(name = "calle", length = 256)
     private String calle;
 
@@ -27,13 +26,4 @@ public class Domicilio extends BaseEntity {
     @Column(name = "cp", length = 256)
     private Integer cp;
 
-    @OneToMany(mappedBy = "domicilio_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Pedido> pedidosFK;
-
-    @ManyToMany(mappedBy = "domicilios")
-    private List<Cliente> clientesFK;
-
-    @ManyToOne
-    @JoinColumn(name = "localidad_id")
-    private Localidad localidad;
 }

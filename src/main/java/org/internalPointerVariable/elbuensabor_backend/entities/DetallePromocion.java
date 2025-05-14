@@ -20,13 +20,13 @@ public class DetallePromocion extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "articulo_insumo_fk")
-    private ArticuloInsumo articuloInsumoFK;
+    private ArticuloInsumo articuloInsumo;
 
     @ManyToOne
     @JoinColumn(name = "articulo_manufacturado_fk")
-    private ArticuloManufacturado articuloManufacturadoFK;
+    private ArticuloManufacturado articuloManufacturado;
 
     @ManyToOne
     @JoinColumn(name = "promocion_fk")
-    private Promocion promocionFK;
+    private Promocion promocion;
 }

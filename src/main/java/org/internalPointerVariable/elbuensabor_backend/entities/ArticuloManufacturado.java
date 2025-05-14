@@ -34,8 +34,8 @@ public class ArticuloManufacturado extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "rubro_general_fk")
-    private RubroGeneral rubroGeneralFK;
+    private RubroGeneral rubroGeneral;
 
-    @OneToMany(mappedBy = "articulo_manufacturado_fk", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "articulo_manufacturado", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<ArticuloManufacturadoDetalle> detalles;
 }

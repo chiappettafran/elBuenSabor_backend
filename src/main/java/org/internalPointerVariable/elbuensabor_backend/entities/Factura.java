@@ -9,6 +9,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.FormaPagoEnum;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "factura")
@@ -19,12 +20,11 @@ import java.time.LocalDate;
 public class Factura extends BaseEntity {
 
     @Column(name = "fecha_facturacion", length = 256, nullable = false)
-    private LocalDate fechaFacturacion; //Este atributo tambien se puede obviar
+    private OffsetDateTime fechaFacturacion; //Este atributo tambien se puede obviar
 
 
     @Column(name = "porcentaje_descuento", length = 256, nullable = false)
     private Integer porcentajeDescuento;
-
 
     @Column(name = "forma_pago", length = 256, nullable = false)
     private FormaPagoEnum formaPago;

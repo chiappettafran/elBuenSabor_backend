@@ -10,7 +10,6 @@ import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.Pues
 import java.util.List;
 
 @Entity
-@Table(name = "empleado")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -20,6 +19,4 @@ public class Empleado extends Persona{
     @Column(name = "puesto", length = 50)
     private PuestoEnum puesto;
 
-    @OneToMany(mappedBy = "empleado")
-    private List<Pedido> pedidos;
 }
