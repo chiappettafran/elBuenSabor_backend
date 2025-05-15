@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -32,5 +31,5 @@ public class Promocion extends BaseEntity {
     private Double descuento;
 
     @OneToMany(mappedBy = "promocion", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DetallePromocion> detalles;
+    private List<PromocionDetalle> detalles;
 }

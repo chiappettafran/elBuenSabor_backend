@@ -13,7 +13,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 @AllArgsConstructor
 @Getter
 @Setter
-public class DetallePedido extends BaseEntity {
+public class PedidoDetalle extends BaseEntity {
 
     @Column(name = "cantidad", length = 256)
     private Integer cantidad;

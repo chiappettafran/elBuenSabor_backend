@@ -15,8 +15,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 @AllArgsConstructor
 @Getter
 @Setter
-public class RubroGeneral extends BaseEntity {
-
+public class ArticuloManufacturadoRubro extends BaseEntity {
     @Column(name = "denominacion", length = 256)
     private String denominacion;
 }

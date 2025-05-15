@@ -43,23 +43,27 @@ public class Pedido extends BaseEntity {
     @Column(name = "forma_pago")
     private FormaPagoEnum formaPago;
 
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "factura_fk")
+    private Factura factura;
+
     @ManyToOne
     @JoinColumn(name = "cliente_fk")
-    private Cliente cliente;
+    private PersonaCliente cliente;
 
     @ManyToOne
     @JoinColumn(name = "cajero_fk")
-    private Empleado cajero;
+    private PersonaEmpleado cajero;
 
     @ManyToOne
     @JoinColumn(name = "cocinero_fk")
-    private Empleado cocinero;
+    private PersonaEmpleado cocinero;
 
     @ManyToOne
     @JoinColumn(name = "delivery_FK")
-    private Empleado delivery;
+    private PersonaEmpleado delivery;
 
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DetallePedido> detallesFK;
+    private List<PedidoDetalle> detalles;
 }

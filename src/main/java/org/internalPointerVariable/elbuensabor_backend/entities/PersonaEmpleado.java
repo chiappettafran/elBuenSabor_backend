@@ -7,14 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.PuestoEnum;
 
-import java.util.List;
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Empleado extends Persona{
+public class PersonaEmpleado extends Persona{
 
     @Column(name = "puesto", length = 50)
     private PuestoEnum puesto;

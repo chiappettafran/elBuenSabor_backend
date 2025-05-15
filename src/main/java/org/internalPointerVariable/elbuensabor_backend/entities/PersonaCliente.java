@@ -13,7 +13,7 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Cliente extends Persona {
+public class PersonaCliente extends Persona {
 
     @Column(name = "fecha_nacimiento")
     private OffsetDateTime fechaNacimiento;

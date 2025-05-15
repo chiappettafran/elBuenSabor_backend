@@ -19,10 +19,6 @@ import java.time.OffsetDateTime;
 @Setter
 public class Factura extends BaseEntity {
 
-    @Column(name = "fecha_facturacion", length = 256, nullable = false)
-    private OffsetDateTime fechaFacturacion; //Este atributo tambien se puede obviar
-
-
     @Column(name = "porcentaje_descuento", length = 256, nullable = false)
     private Integer porcentajeDescuento;
 
@@ -32,9 +28,8 @@ public class Factura extends BaseEntity {
     @Column(name = "total_venta", length = 256, nullable = false)
     private Double totalVenta;
 
-    @OneToOne
-    @JoinColumn(name = "pedido_fk")
-    private Pedido pedido;
+    @Column(name = "is_pagado")
+    private Boolean isPagado;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "datos_mercado_pago_fk")

@@ -30,9 +30,12 @@ public class ArticuloInsumo extends BaseEntity {
     @Column(name = "es_para_elaborar", length = 256)
     private Boolean esParaElaborar;
 
+    @Column(name = "stock")
+    private Integer stock;
+
     @ManyToOne
     @JoinColumn(name = "rubro_fk")
-    private Rubro rubro;
+    private ArticuloInsumoRubro articuloInsumoRubro;
 
     @ManyToOne
     @JoinColumn(name = "unidad_medida_fk")
