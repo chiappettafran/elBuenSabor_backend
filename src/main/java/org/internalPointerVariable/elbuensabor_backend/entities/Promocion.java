@@ -19,7 +19,7 @@ import java.util.List;
 @Setter
 public class Promocion extends BaseEntity {
 
-    @Column(name = "denominacion", length = 256)
+    @Column(name = "denominacion")
     private String denominacion;
 
     @Column(name = "fecha_desde")

@@ -19,10 +19,10 @@ import java.time.OffsetDateTime;
 @Setter
 public class Factura extends BaseEntity {
 
-    @Column(name = "forma_pago", length = 256, nullable = false)
+    @Column(name = "forma_pago")
     private FormaPagoEnum formaPago;
 
-    @Column(name = "total_venta", length = 256, nullable = false)
+    @Column(name = "total_venta")
     private Double totalVenta;
 
     @Column(name = "is_pagado")

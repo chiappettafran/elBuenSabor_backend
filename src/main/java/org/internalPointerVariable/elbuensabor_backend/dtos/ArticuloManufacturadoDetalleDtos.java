@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.dtos.base.BaseDtos;
 
-public abstract class ArticuloManufacturadoDetalleDtos {
+public abstract class   ArticuloManufacturadoDetalleDtos {
 
     @Getter
     @Setter

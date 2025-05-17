@@ -29,3 +29,19 @@ public class ArticuloManufacturadoRubroController extends BaseController<Articul
         return ArticuloManufacturadoRubroDtos.ResponseDTO.class;
     }
 }
+
+/* ENDPOINTS
+
+GET     localhost:8080/articulo_manufacturado_rubro    -> get all
+GET     localhost:8080/articulo_manufacturado_rubro/id -> get by id
+POST    localhost:8080/articulo_manufacturado_rubro    -> create
+PUT     localhost:8080/articulo_manufacturado_rubro/id -> update
+DELETE  localhost:8080/articulo_manufacturado_rubro/id -> soft delete
+
+EJEMPLO DE JSON PARA POST y PUT (en el put no puede faltar ningun atributo si no actualizara a null)
+
+{
+  "denominacion": "panes"
+}
+
+*/

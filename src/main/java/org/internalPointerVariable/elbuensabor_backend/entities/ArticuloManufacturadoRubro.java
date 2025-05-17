@@ -10,12 +10,12 @@ import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 
 @Entity
-@Table(name = "rubro_general")
+@Table(name = "articulo_manufacturado_rubro")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class ArticuloManufacturadoRubro extends BaseEntity {
-    @Column(name = "denominacion", length = 256)
+    @Column(name = "denominacion")
     private String denominacion;
 }

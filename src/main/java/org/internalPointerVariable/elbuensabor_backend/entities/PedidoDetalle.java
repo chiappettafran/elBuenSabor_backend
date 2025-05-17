@@ -8,17 +8,17 @@ import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntityDetalle;
 
 @Entity
-@Table(name = "detalle_pedido")
+@Table(name = "pedido_detalle")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class PedidoDetalle extends BaseEntityDetalle {
 
-    @Column(name = "cantidad", length = 256)
+    @Column(name = "cantidad")
     private Integer cantidad;
 
-    @Column(name = "subtotal", length = 256)
+    @Column(name = "subtotal")
     private Double subtotal;
 
     @ManyToOne

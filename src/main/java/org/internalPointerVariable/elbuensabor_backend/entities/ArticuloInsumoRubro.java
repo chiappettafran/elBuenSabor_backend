@@ -15,7 +15,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 @Setter
 public class ArticuloInsumoRubro extends BaseEntity {
 
-    @Column(name = "denominacion", length = 256)
+    @Column(name = "denominacion")
     private String denominacion;
 
     @ManyToOne

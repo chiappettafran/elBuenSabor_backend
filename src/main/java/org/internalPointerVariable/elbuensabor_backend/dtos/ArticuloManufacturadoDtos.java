@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-public abstract class ArticuloManufacturadoDtos {
+public abstract class  ArticuloManufacturadoDtos {
 
     @Getter
     @Setter

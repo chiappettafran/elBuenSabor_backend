@@ -18,13 +18,13 @@ import java.util.List;
 @Setter
 public class Domicilio extends BaseEntityDetalle {
 
-    @Column(name = "calle", length = 256)
+    @Column(name = "calle")
     private String calle;
 
-    @Column(name = "numero", length = 256)
+    @Column(name = "numero")
     private int numero;
 
-    @Column(name = "cp", length = 256)
+    @Column(name = "cp")
     private Integer cp;
 
 }

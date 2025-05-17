@@ -15,26 +15,26 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 @Setter
 public class ArticuloInsumo extends BaseEntity {
 
-    @Column(name = "denominacion", length = 256)
+    @Column(name = "denominacion")
     private String denominacion;
 
-    @Column(name = "descripcion", length = 256)
+    @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "precio_compra", length = 256)
+    @Column(name = "precio_compra")
     private Double precioCompra;
 
-    @Column(name = "imagen", length = 256)
+    @Column(name = "imagen")
     private String imagen;
 
-    @Column(name = "precio_venta", length = 256)
+    @Column(name = "precio_venta")
     private Double precioVenta;
 
-    @Column(name = "es_para_elaborar", length = 256)
+    @Column(name = "es_para_elaborar")
     private Boolean esParaElaborar;
 
     @Column(name = "stock")
-    private Integer stock;
+    private Double stock;
 
     @ManyToOne
     @JoinColumn(name = "rubro_fk")

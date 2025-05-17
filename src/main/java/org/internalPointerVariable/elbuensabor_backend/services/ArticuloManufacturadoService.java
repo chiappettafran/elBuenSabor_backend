@@ -2,6 +2,7 @@ package org.internalPointerVariable.elbuensabor_backend.services;
 
 import org.internalPointerVariable.elbuensabor_backend.dtos.ArticuloManufacturadoDtos;
 import org.internalPointerVariable.elbuensabor_backend.entities.ArticuloManufacturado;
+import org.internalPointerVariable.elbuensabor_backend.entities.ArticuloManufacturadoDetalle;
 import org.internalPointerVariable.elbuensabor_backend.repositories.ArticuloManufacturadoRepository;
 import org.internalPointerVariable.elbuensabor_backend.services.base.BaseService;
 import org.springframework.stereotype.Service;
@@ -14,4 +15,12 @@ public class ArticuloManufacturadoService extends BaseService<ArticuloManufactur
         super(repository);
         this.repository = repository;
     }
+
+    @Override
+    protected void processEntityRelationshipsWrite(ArticuloManufacturado entity, ArticuloManufacturadoDtos.RequestDTO requestDTO) {
+        for (ArticuloManufacturadoDetalle detalle : entity.getDetalles()) {
+            detalle.setArticuloManufacturado(entity);
+        }
+    }
 }
+

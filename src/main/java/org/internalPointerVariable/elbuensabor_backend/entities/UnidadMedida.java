@@ -19,7 +19,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 @Where(clause = "is_deleted = false")
 public class UnidadMedida extends BaseEntity {
 
-    @Column(name = "denominacion", length = 256)
+    @Column(name = "denominacion")
     private String denominacion;
 
 }

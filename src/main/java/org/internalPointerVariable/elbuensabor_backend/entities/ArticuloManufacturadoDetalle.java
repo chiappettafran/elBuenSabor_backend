@@ -16,7 +16,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntityD
 @Setter
 public class ArticuloManufacturadoDetalle extends BaseEntityDetalle {
 
-    @Column(name = "cantidad", length = 256)
+    @Column(name = "cantidad")
     private Double cantidad;
 
     @ManyToOne

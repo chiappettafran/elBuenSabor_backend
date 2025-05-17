@@ -11,12 +11,12 @@ public abstract class ArticuloInsumoDtos {
     @Setter
     public static class ResponseDTO extends BaseDtos.ResponseDTO {
         private String denominacion;
-        private String desccripcion;
+        private String descripcion;
         private Double precioCompra;
         private Double precioVenta;
         private String imagen;
         private Boolean esParaElaborar;
-        private Integer stock;
+        private Double stock;
         private ArticuloInsumoRubroDtos.AssignToRelationsDTO articuloInsumoRubro;
         private UnidadMedidaDtos.AssignToRelationsDTO unidadMedida;
     }
@@ -25,11 +25,11 @@ public abstract class ArticuloInsumoDtos {
     @Setter
     public static class RequestDTO extends BaseDtos.RequestDTO implements ImageHolderDto {
         private String denominacion;
-        private String desccripcion;
+        private String descripcion;
         private Double precioCompra;
         private Double precioVenta;
         private Boolean esParaElaborar;
-        private Integer stock;
+        private Double stock;
         private ArticuloInsumoRubroDtos.AssignToRelationsDTO articuloInsumoRubro;
         private UnidadMedidaDtos.AssignToRelationsDTO unidadMedida;
 
@@ -56,12 +56,12 @@ public abstract class ArticuloInsumoDtos {
     @Setter
     public static class AssignToRelationsDTO extends BaseDtos.AssignToRelationsDTO {
         private String denominacion;
-        private String desccripcion;
+        private String descripcion;
         private Double precioCompra;
         private Double precioVenta;
         private Boolean esParaElaborar;
         private String imagen;
-        private Integer stock;
+        private Double stock;
         private ArticuloInsumoRubroDtos.AssignToRelationsDTO articuloInsumoRubro;
         private UnidadMedidaDtos.AssignToRelationsDTO unidadMedida;
     }

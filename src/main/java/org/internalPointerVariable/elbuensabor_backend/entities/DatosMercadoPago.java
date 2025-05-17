@@ -18,10 +18,10 @@ import java.time.LocalDate;
 @Setter
 public class DatosMercadoPago extends BaseEntity {
 
-    @Column(name = "mp_preference_id", length = 256, nullable = true)
+    @Column(name = "mp_preference_id")
     private String mpPreferenceId;
 
-    @Column(name = "status", length = 256, nullable = true)
+    @Column(name = "status")
     private StatusMPEnum status;
     
 }

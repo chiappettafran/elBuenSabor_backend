@@ -18,22 +18,22 @@ import java.util.List;
 @Setter
 public class ArticuloManufacturado extends BaseEntity {
 
-    @Column(name = "denominacion", length = 256)
+    @Column(name = "denominacion")
     private String denominacion;
 
-    @Column(name = "descripcion", length = 256)
+    @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "precio_compra", length = 256)
+    @Column(name = "precio_compra")
     private Double precioCompra;
 
-    @Column(name = "imagen", length = 256)
+    @Column(name = "imagen")
     private String imagen;
 
-    @Column(name = "precio_venta", length = 256)
+    @Column(name = "precio_venta")
     private Double precioVenta;
 
-    @Column(name = "tiempo_estimado", length = 256)
+    @Column(name = "tiempo_estimado")
     private Integer tiempoEstimado;
 
     @ManyToOne
