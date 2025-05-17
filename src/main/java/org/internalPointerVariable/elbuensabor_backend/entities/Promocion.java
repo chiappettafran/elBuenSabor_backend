@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,9 +28,12 @@ public class Promocion extends BaseEntity {
     @Column(name = "fecha_hasta")
     private OffsetDateTime fechaHasta;
 
+    @Column(name = "imagen")
+    private String imagen;
+
     @Column(name = "descuento")
     private Double descuento;
 
     @OneToMany(mappedBy = "promocion", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<PromocionDetalle> detalles;
+    private List<PromocionDetalle> detalles = new ArrayList<>();;
 }

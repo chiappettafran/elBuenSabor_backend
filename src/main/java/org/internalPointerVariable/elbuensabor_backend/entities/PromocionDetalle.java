@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
+import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntityDetalle;
 
 @Entity
 @Table(name = "detalle_promocion")
@@ -13,7 +13,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 @AllArgsConstructor
 @Getter
 @Setter
-public class PromocionDetalle extends BaseEntity {
+public class PromocionDetalle extends BaseEntityDetalle {
 
     @Column(name = "cantidad", length = 256)
     private Integer cantidad;

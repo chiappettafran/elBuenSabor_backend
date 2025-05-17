@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.io.IOException;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
@@ -15,12 +14,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleException(HttpServletRequest request, Exception ex) {
         HttpStatus status;
-        if (ex instanceof NoSuchElementException) {
+        if (ex instanceof NoSuchElementException || ex instanceof UsuarioNoEncontradoException) {
             status = HttpStatus.NOT_FOUND;
-        } else if (ex instanceof ImageProcessingException) {
+        } else if (ex instanceof ImageProcessingException || ex instanceof IllegalArgumentException) {
             status = HttpStatus.BAD_REQUEST;
+        } else if (ex instanceof ClaveIncorrectaException) {
+            status = HttpStatus.UNAUTHORIZED;
         } else {
-            status = HttpStatus.BAD_REQUEST;
+            status = HttpStatus.INTERNAL_SERVER_ERROR;
         }
 
         ErrorResponse error = new ErrorResponse(status, ex.getMessage(), request.getRequestURI());

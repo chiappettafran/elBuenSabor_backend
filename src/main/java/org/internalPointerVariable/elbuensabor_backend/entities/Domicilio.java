@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
+import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntityDetalle;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Domicilio extends BaseEntity {
+public class Domicilio extends BaseEntityDetalle {
 
     @Column(name = "calle", length = 256)
     private String calle;

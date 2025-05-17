@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.RolEnum;
 
 @Entity
@@ -13,17 +14,17 @@ import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.RolE
 @AllArgsConstructor
 @Getter
 @Setter
-public class Usuario extends Persona{
+public class Usuario extends BaseEntity {
 
     @Column(name = "auth2_id")
     private String auth2Id;
 
-    @Column(name = "username", length = 80)
-    private String usuario;
+    @Column(name = "nombre_usuario")
+    private String nombreUsuario;
 
-    @Column(name = "foto_perfil", length = 80)
+    @Column(name = "foto_perfil")
     private String fotoPerfil;
 
-    @Column(name = "rol", length = 50)
+    @Column(name = "rol")
     private RolEnum rol;
 }

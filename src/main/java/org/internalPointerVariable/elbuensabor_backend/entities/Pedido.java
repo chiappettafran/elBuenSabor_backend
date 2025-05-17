@@ -11,6 +11,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.Form
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.TipoEnvioEnum;
 
 import java.time.OffsetTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -63,7 +64,6 @@ public class Pedido extends BaseEntity {
     @JoinColumn(name = "delivery_FK")
     private PersonaEmpleado delivery;
 
-
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<PedidoDetalle> detalles;
+    private List<PedidoDetalle> detalles = new ArrayList<>();;
 }

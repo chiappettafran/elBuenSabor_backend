@@ -1,9 +1,9 @@
 package org.internalPointerVariable.elbuensabor_backend.repositories;
 
-import org.internalPointerVariable.elbuensabor_backend.entities.PedidoDetalle;
+import org.internalPointerVariable.elbuensabor_backend.entities.PersonaCliente;
 import org.internalPointerVariable.elbuensabor_backend.repositories.base.BaseRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DetallePedidoRepository extends BaseRepository<PedidoDetalle> {
+public interface PersonaClienteRepository extends BaseRepository<PersonaCliente> {
 }

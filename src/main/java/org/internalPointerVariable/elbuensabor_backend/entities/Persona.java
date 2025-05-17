@@ -17,10 +17,10 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 @Setter
 public abstract class Persona extends BaseEntity {
 
-    @Column(name = "nombre", length = 80)
+    @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "apellido", length = 80)
+    @Column(name = "apellido")
     private String apellido;
 
     @Column(name = "dni")
@@ -29,7 +29,7 @@ public abstract class Persona extends BaseEntity {
     @Column(name = "telefono")
     private Long telefono;
 
-    @Column(name = "apellido", length = 150)
+    @Column(name = "email")
     private String email;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
@@ -37,7 +37,7 @@ public abstract class Persona extends BaseEntity {
     private Domicilio domicilio;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "usuario")
+    @JoinColumn(name = "usuario_fk")
     private Usuario usuario;
 
 }

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,6 +27,9 @@ public class ArticuloManufacturado extends BaseEntity {
     @Column(name = "precio_compra", length = 256)
     private Double precioCompra;
 
+    @Column(name = "imagen", length = 256)
+    private String imagen;
+
     @Column(name = "precio_venta", length = 256)
     private Double precioVenta;
 
@@ -36,6 +40,6 @@ public class ArticuloManufacturado extends BaseEntity {
     @JoinColumn(name = "rubro_general_fk")
     private ArticuloManufacturadoRubro articuloManufacturadoRubro;
 
-    @OneToMany(mappedBy = "articulo_manufacturado", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<ArticuloManufacturadoDetalle> detalles;
+    @OneToMany(mappedBy = "articuloManufacturado", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<ArticuloManufacturadoDetalle> detalles = new ArrayList<>();
 }

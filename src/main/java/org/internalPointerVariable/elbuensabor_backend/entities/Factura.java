@@ -19,9 +19,6 @@ import java.time.OffsetDateTime;
 @Setter
 public class Factura extends BaseEntity {
 
-    @Column(name = "porcentaje_descuento", length = 256, nullable = false)
-    private Integer porcentajeDescuento;
-
     @Column(name = "forma_pago", length = 256, nullable = false)
     private FormaPagoEnum formaPago;
 

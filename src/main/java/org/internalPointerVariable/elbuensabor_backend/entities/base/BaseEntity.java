@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 @MappedSuperclass
-public class BaseEntity {
+public abstract class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class BaseEntity {
     private OffsetDateTime createdAt;
 
     @Column(name = "is_deleted")
-    private boolean isDeleted;
+    private Boolean isDeleted = false;
 
     @Column(name = "deleted_at")
     private OffsetDateTime deletedAt;

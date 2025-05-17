@@ -24,6 +24,9 @@ public class ArticuloInsumo extends BaseEntity {
     @Column(name = "precio_compra", length = 256)
     private Double precioCompra;
 
+    @Column(name = "imagen", length = 256)
+    private String imagen;
+
     @Column(name = "precio_venta", length = 256)
     private Double precioVenta;
 

@@ -8,7 +8,7 @@ import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 
 @Entity
-@Table(name = "rubro")
+@Table(name = "articulo_insumo_rubro")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
