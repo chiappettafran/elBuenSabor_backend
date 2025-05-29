@@ -11,6 +11,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.Esta
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.FormaPagoEnum;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.TipoEnvioEnum;
 
+import java.time.OffsetDateTime;
 import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +26,11 @@ import java.util.List;
 public class Pedido extends BaseEntity {
 
 
-    @Column(name = "hora_inicio_preparacion")
-    private OffsetTime horaInicioPreparacion;
+    @Column(name = "inicio_preparacion")
+    private OffsetDateTime inicioPreparacion;
 
-    @Column(name = "hora_fin_preparacion")
-    private OffsetTime horaFinPreparacion;
+    @Column(name = "fin_preparacion")
+    private OffsetDateTime finPreparacion;
 
     @Column(name = "total")
     private Double total;

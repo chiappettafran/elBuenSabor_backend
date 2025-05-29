@@ -7,6 +7,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.Esta
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.FormaPagoEnum;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.TipoEnvioEnum;
 
+import java.time.OffsetDateTime;
 import java.time.OffsetTime;
 import java.util.List;
 
@@ -15,8 +16,8 @@ public abstract class PedidoDtos {
     @Getter
     @Setter
     public static class ResponseDTO extends BaseDtos.ResponseDTO {
-        private OffsetTime horaInicioPreparacion;
-        private OffsetTime horaFinPreparacion;
+        private OffsetDateTime inicioPreparacion;
+        private OffsetDateTime finPreparacion;
         private Double total;
         private Double totalCosto;
         private EstadoPedidoEnum estado;
@@ -33,8 +34,8 @@ public abstract class PedidoDtos {
     @Getter
     @Setter
     public static class RequestDTO extends BaseDtos.RequestDTO {
-        private OffsetTime horaInicioPreparacion;
-        private OffsetTime horaFinPreparacion;
+        private OffsetDateTime inicioPreparacion;
+        private OffsetDateTime finPreparacion;
         private Double total;
         private Double totalCosto;
         private EstadoPedidoEnum estado;
@@ -51,8 +52,8 @@ public abstract class PedidoDtos {
     @Getter
     @Setter
     public static class AssignToRelationsDTO extends BaseDtos.AssignToRelationsDTO {
-        private OffsetTime horaInicioPreparacion;
-        private OffsetTime horaFinPreparacion;
+        private OffsetDateTime inicioPreparacion;
+        private OffsetDateTime finPreparacion;
         private Double total;
         private Double totalCosto;
         private EstadoPedidoEnum estado;
