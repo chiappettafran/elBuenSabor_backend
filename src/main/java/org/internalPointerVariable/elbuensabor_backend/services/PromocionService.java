@@ -22,4 +22,19 @@ public class PromocionService extends BaseService<Promocion, PromocionDtos.Respo
             detalle.setPromocion(entity);
         }
     }
+
+    @Override
+    protected void processEntityRelationshipsUpdate(Promocion existing, Promocion updated) {
+        existing.getDetalles().clear();
+        existing.getDetalles().addAll(updated.getDetalles());
+
+        for (PromocionDetalle detalle : existing.getDetalles()) {
+            detalle.setPromocion(existing);
+        }
+    }
+
+    @Override
+    protected String[] getIgnorePropertiesArray() {
+        return new String[]{"id", "detalles"};
+    }
 }

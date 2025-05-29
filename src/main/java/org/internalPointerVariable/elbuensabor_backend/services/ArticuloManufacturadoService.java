@@ -35,7 +35,7 @@ public class ArticuloManufacturadoService extends BaseService<ArticuloManufactur
 
     @Override
     protected String[] getIgnorePropertiesArray() {
-        return new String[]{"id", "detalles"}; // Ignorar ID y la colección detalles
+        return new String[]{"id", "detalles"};
     }
 }
 
