@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 
 @Entity
@@ -15,6 +16,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 @AllArgsConstructor
 @Getter
 @Setter
+@Where(clause = "is_deleted = false")
 public abstract class Persona extends BaseEntity {
 
     @Column(name = "nombre")

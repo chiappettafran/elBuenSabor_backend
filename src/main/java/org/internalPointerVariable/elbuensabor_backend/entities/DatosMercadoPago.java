@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.StatusMPEnum;
 
@@ -16,6 +17,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
+@Where(clause = "is_deleted = false")
 public class DatosMercadoPago extends BaseEntity {
 
     @Column(name = "mp_preference_id")

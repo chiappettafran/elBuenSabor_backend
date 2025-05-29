@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@Where(clause = "is_deleted = false")
 public class ArticuloManufacturado extends BaseEntity {
 
     @Column(name = "denominacion")

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.FormaPagoEnum;
 
@@ -17,16 +18,14 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 @Getter
 @Setter
+@Where(clause = "is_deleted = false")
 public class Factura extends BaseEntity {
-
-    @Column(name = "forma_pago")
-    private FormaPagoEnum formaPago;
 
     @Column(name = "total_venta")
     private Double totalVenta;
 
-    @Column(name = "is_pagado")
-    private Boolean isPagado;
+    @Column(name = "anulada")
+    private boolean is_anulada;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "datos_mercado_pago_fk")

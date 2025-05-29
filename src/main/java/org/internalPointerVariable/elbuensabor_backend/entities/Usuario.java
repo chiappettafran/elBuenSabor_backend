@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.RolEnum;
 
@@ -14,6 +15,7 @@ import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.RolE
 @AllArgsConstructor
 @Getter
 @Setter
+@Where(clause = "is_deleted = false")
 public class Usuario extends BaseEntity {
 
     @Column(name = "auth2_id")
