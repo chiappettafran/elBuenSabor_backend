@@ -36,6 +36,9 @@ public class ArticuloInsumo extends BaseEntity {
     @Column(name = "stock")
     private Double stock;
 
+    @Column(name = "stock_minimo")
+    private Double stockMinimo;
+
     @ManyToOne
     @JoinColumn(name = "rubro_fk")
     private ArticuloInsumoRubro articuloInsumoRubro;

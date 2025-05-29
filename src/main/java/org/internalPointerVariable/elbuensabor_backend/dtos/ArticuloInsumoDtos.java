@@ -17,6 +17,7 @@ public abstract class ArticuloInsumoDtos {
         private String imagen;
         private Boolean esParaElaborar;
         private Double stock;
+        private Double stockMinimo;
         private ArticuloInsumoRubroDtos.AssignToRelationsDTO articuloInsumoRubro;
         private UnidadMedidaDtos.AssignToRelationsDTO unidadMedida;
     }
@@ -30,6 +31,7 @@ public abstract class ArticuloInsumoDtos {
         private Double precioVenta;
         private Boolean esParaElaborar;
         private Double stock;
+        private Double stockMinimo;
         private ArticuloInsumoRubroDtos.AssignToRelationsDTO articuloInsumoRubro;
         private UnidadMedidaDtos.AssignToRelationsDTO unidadMedida;
 
@@ -62,6 +64,7 @@ public abstract class ArticuloInsumoDtos {
         private Boolean esParaElaborar;
         private String imagen;
         private Double stock;
+        private Double stockMinimo;
         private ArticuloInsumoRubroDtos.AssignToRelationsDTO articuloInsumoRubro;
         private UnidadMedidaDtos.AssignToRelationsDTO unidadMedida;
     }
