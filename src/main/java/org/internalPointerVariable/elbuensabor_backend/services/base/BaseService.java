@@ -69,22 +69,23 @@ public abstract class BaseService<ENTITY extends BaseEntity, RESPONSE_DTO, REQUE
         ENTITY existing = entityRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Entidad con ID " + id + " no encontrada"));
 
-        //idem al save
+
         if (dto instanceof ImageHolderDto imageHolderDto) {
             MultipartFile newImagenFile = imageHolderDto.getImagenFile();
             if (newImagenFile != null && !newImagenFile.isEmpty()) {
                 if (imageHolderDto.getImagen() != null) {
                     deleteImage(imageHolderDto.getImagen());
                 }
-
                 String imagen = saveImage(newImagenFile);
                 imageHolderDto.setImagen(imagen);
             }
         }
+
         ENTITY updated = modelMapper.map(dto, entityClass);
         updated.setCreatedAt(existing.getCreatedAt());
-        processEntityRelationshipsWrite(updated, dto);
-        BeanUtils.copyProperties(updated, existing, "id");
+        processEntityRelationshipsUpdate(existing, updated);
+        BeanUtils.copyProperties(updated, existing, getIgnorePropertiesArray());
+
         return processEntityRelationshipsRead(existing, modelMapper.map(entityRepository.save(existing), responseDtoClass));
     }
 
@@ -116,11 +117,15 @@ public abstract class BaseService<ENTITY extends BaseEntity, RESPONSE_DTO, REQUE
     protected void processEntityRelationshipsWrite(ENTITY entity, REQUEST_DTO dto) {
     }
     //cada servicio especifico puede sobreescribir estos métodos si queremos procesar sus relaciones a parte,
-    //segun mis pruebas el Read no es tan necesario si estan bien mapeados los dtos, pero el Write sí lo es
+    //segun mis pruebas el Read no es tan necesario si estan bien mapeados los dtos, pero el Write y update sí lo es
     //ya que ahi realizamos las asignaciones pertinentes :) mucho texto pero me pidieron comentar y esto es
     //lo que me sale salu2 que tengan un buen dia/tardes/noches/contranoches!!!
+    protected void processEntityRelationshipsUpdate(ENTITY existing, ENTITY updated) {}
     protected RESPONSE_DTO processEntityRelationshipsRead(ENTITY entity, RESPONSE_DTO dto) {
         return dto;
+    }
+    protected String[] getIgnorePropertiesArray() {
+        return new String[]{"id"};
     }
 
 

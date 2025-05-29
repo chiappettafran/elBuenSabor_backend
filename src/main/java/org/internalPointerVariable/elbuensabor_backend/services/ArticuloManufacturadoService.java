@@ -22,5 +22,20 @@ public class ArticuloManufacturadoService extends BaseService<ArticuloManufactur
             detalle.setArticuloManufacturado(entity);
         }
     }
+
+    @Override
+    protected void processEntityRelationshipsUpdate(ArticuloManufacturado existing, ArticuloManufacturado updated) {
+        existing.getDetalles().clear();
+        existing.getDetalles().addAll(updated.getDetalles());
+
+        for (ArticuloManufacturadoDetalle detalle : existing.getDetalles()) {
+            detalle.setArticuloManufacturado(existing);
+        }
+    }
+
+    @Override
+    protected String[] getIgnorePropertiesArray() {
+        return new String[]{"id", "detalles"}; // Ignorar ID y la colección detalles
+    }
 }
 
