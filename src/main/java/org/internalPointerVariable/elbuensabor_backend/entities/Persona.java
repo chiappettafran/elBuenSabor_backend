@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Where;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
+import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.RolEnum;
 
 @Entity
 @Table(name = "persona")
@@ -25,21 +26,14 @@ public abstract class Persona extends BaseEntity {
     @Column(name = "apellido")
     private String apellido;
 
-    @Column(name = "dni")
-    private Long dni;
+    @Column(name = "auth2_id")
+    private String auth2Id;
 
-    @Column(name = "telefono")
-    private Long telefono;
-
-    @Column(name = "email")
-    private String email;
+    @Column(name = "rol")
+    private RolEnum rol;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "domicilio_fk")
     private Domicilio domicilio;
-
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "usuario_fk")
-    private Usuario usuario;
 
 }

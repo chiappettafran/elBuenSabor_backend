@@ -15,6 +15,20 @@ import java.time.OffsetDateTime;
 @Setter
 public class PersonaCliente extends Persona {
 
+    @Column(name = "dni")
+    private Long dni;
+
+    @Column(name = "telefono")
+    private Long telefono;
+
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "fecha_nacimiento")
     private OffsetDateTime fechaNacimiento;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "domicilio_fk")
+    private Domicilio domicilio;
+
 }
