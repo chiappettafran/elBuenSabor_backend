@@ -29,11 +29,10 @@ public abstract class Persona extends BaseEntity {
     @Column(name = "auth2_id")
     private String auth2Id;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "rol")
     private RolEnum rol;
-
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "domicilio_fk")
-    private Domicilio domicilio;
 
 }

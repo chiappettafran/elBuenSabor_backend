@@ -1,0 +1,10 @@
+auth0:
+  domain: dev-vfvdu2yuklgt6n5k.us.auth0.com
+  audience: el_buen_sabor_api
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-vfvdu2yuklgt6n5k.us.auth0.com/

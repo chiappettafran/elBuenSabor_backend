@@ -12,10 +12,9 @@ public abstract class PersonaDtos {
     public abstract static class ResponseDTO extends BaseDtos.ResponseDTO {
         private String nombre;
         private String apellido;
-        private Long dni;
         private String email;
+        private String auth2Id;
         private RolEnum rol;
-        private DomicilioDtos.AssignToRelationsDTO domicilio;
     }
 
     @Getter
@@ -23,10 +22,9 @@ public abstract class PersonaDtos {
     public abstract static class RequestDTO extends BaseDtos.RequestDTO {
         private String nombre;
         private String apellido;
-        private Long dni;
         private String email;
+        private String auth2Id;
         private RolEnum rol;
-        private DomicilioDtos.AssignToRelationsDTO domicilio;
     }
 
     @Getter
@@ -34,8 +32,8 @@ public abstract class PersonaDtos {
     public abstract static class AssignToRelationsDTO extends BaseDtos.AssignToRelationsDTO {
         private String nombre;
         private String apellido;
-        private Long dni;
+        private String email;
+        private String auth2Id;
         private RolEnum rol;
-        private DomicilioDtos.AssignToRelationsDTO domicilio;
     }
 }

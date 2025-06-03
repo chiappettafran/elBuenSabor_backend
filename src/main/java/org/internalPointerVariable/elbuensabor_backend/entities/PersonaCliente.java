@@ -21,9 +21,6 @@ public class PersonaCliente extends Persona {
     @Column(name = "telefono")
     private Long telefono;
 
-    @Column(name = "email")
-    private String email;
-
     @Column(name = "fecha_nacimiento")
     private OffsetDateTime fechaNacimiento;
 
