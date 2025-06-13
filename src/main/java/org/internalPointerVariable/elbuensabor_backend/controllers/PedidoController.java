@@ -45,7 +45,7 @@ EJEMPLO DE JSON PARA POST y PUT (en el put no puede faltar ningun atributo si no
     "finPreparacion": "2025-05-29T19:55:03.10495-03:00",
     "total": 5000,
     "totalCosto": 2500,
-    "estado": 5,
+    "estado": 0,
     "tipoEnvio": 0,
     "formaPago": 1,
 
