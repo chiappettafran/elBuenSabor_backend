@@ -14,8 +14,10 @@ public abstract class PromocionDtos {
     @Setter
     public static class ResponseDTO extends BaseDtos.ResponseDTO {
         private String denominacion;
+        private String descripcion;
         private OffsetDateTime fechaDesde;
         private OffsetDateTime fechaHasta;
+        private Double precioVenta;
         private String imagen;
         private Double descuento;
         private List<PromocionDetalleDtos.AssignToRelationsDTO> detalles;
@@ -25,8 +27,10 @@ public abstract class PromocionDtos {
     @Setter
     public static class RequestDTO extends BaseDtos.RequestDTO implements ImageHolderDto {
         private String denominacion;
+        private String descripcion;
         private OffsetDateTime fechaDesde;
         private OffsetDateTime fechaHasta;
+        private Double precioVenta;
         private Double descuento;
         private List<PromocionDetalleDtos.AssignToRelationsDTO> detalles;
 
@@ -53,8 +57,10 @@ public abstract class PromocionDtos {
     @Setter
     public static class AssignToRelationsDTO extends BaseDtos.AssignToRelationsDTO {
         private String denominacion;
+        private String descripcion;
         private OffsetDateTime fechaDesde;
         private OffsetDateTime fechaHasta;
+        private Double precioVenta;
         private String imagen;
         private Double descuento;
         private List<PromocionDetalleDtos.AssignToRelationsDTO> detalles;

@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.internalPointerVariable.elbuensabor_backend.dtos.base.BaseDtos;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.EstadoPedidoEnum;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.FormaPagoEnum;
+import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.StatusMPEnum;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.TipoEnvioEnum;
 
 import java.time.OffsetDateTime;
@@ -23,11 +24,15 @@ public abstract class PedidoDtos {
         private EstadoPedidoEnum estado;
         private TipoEnvioEnum tipoEnvio;
         private FormaPagoEnum formaPago;
-        private FacturaDtos.AssignToRelationsDTO factura;
+        private Boolean isAnulado;
+        private String mpPreferenceId;
+        private StatusMPEnum statusMP;
+
         private PersonaClienteDtos.AssignToRelationsDTO cliente;
         private PersonaEmpleadoDtos.AssignToRelationsDTO cajero;
         private PersonaEmpleadoDtos.AssignToRelationsDTO cocinero;
         private PersonaEmpleadoDtos.AssignToRelationsDTO delivery;
+
         private List<PedidoDetalleDtos.AssignToRelationsDTO> detalles;
     }
 
@@ -41,7 +46,9 @@ public abstract class PedidoDtos {
         private EstadoPedidoEnum estado;
         private TipoEnvioEnum tipoEnvio;
         private FormaPagoEnum formaPago;
-        private FacturaDtos.AssignToRelationsDTO factura;
+        private Boolean isAnulado;
+        private String mpPreferenceId;
+        private StatusMPEnum status;
         private PersonaClienteDtos.AssignToRelationsDTO cliente;
         private PersonaEmpleadoDtos.AssignToRelationsDTO cajero;
         private PersonaEmpleadoDtos.AssignToRelationsDTO cocinero;
@@ -59,7 +66,9 @@ public abstract class PedidoDtos {
         private EstadoPedidoEnum estado;
         private TipoEnvioEnum tipoEnvio;
         private FormaPagoEnum formaPago;
-        private FacturaDtos.AssignToRelationsDTO factura;
+        private Boolean isAnulado;
+        private String mpPreferenceId;
+        private StatusMPEnum status;
         private PersonaClienteDtos.AssignToRelationsDTO cliente;
         private PersonaEmpleadoDtos.AssignToRelationsDTO cajero;
         private PersonaEmpleadoDtos.AssignToRelationsDTO cocinero;

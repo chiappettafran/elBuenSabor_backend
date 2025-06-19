@@ -24,11 +24,17 @@ public class Promocion extends BaseEntity {
     @Column(name = "denominacion")
     private String denominacion;
 
+    @Column(name = "descripcion")
+    private String descripcion;
+
     @Column(name = "fecha_desde")
     private OffsetDateTime fechaDesde;
 
     @Column(name = "fecha_hasta")
     private OffsetDateTime fechaHasta;
+
+    @Column(name = "precio_venta")
+    private Double precioVenta;
 
     @Column(name = "imagen")
     private String imagen;

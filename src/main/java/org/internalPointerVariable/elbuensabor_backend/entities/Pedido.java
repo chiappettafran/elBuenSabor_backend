@@ -9,6 +9,7 @@ import org.hibernate.annotations.Where;
 import org.internalPointerVariable.elbuensabor_backend.entities.base.BaseEntity;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.EstadoPedidoEnum;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.FormaPagoEnum;
+import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.StatusMPEnum;
 import org.internalPointerVariable.elbuensabor_backend.entities.enumClasses.TipoEnvioEnum;
 
 import java.time.OffsetDateTime;
@@ -47,9 +48,14 @@ public class Pedido extends BaseEntity {
     @Column(name = "forma_pago")
     private FormaPagoEnum formaPago;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "factura_fk")
-    private Factura factura;
+    @Column(name = "is_anulado")
+    private boolean isAnulado;
+
+    @Column(name = "mp_preference_id")
+    private String mpPreferenceId;
+
+    @Column(name = "status_MP")
+    private StatusMPEnum statusMP;
 
     @ManyToOne
     @JoinColumn(name = "cliente_fk")
@@ -66,6 +72,8 @@ public class Pedido extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "delivery_FK")
     private PersonaEmpleado delivery;
+
+
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PedidoDetalle> detalles = new ArrayList<>();;
